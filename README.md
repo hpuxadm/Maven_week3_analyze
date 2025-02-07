@@ -5,17 +5,17 @@
 
 This is the work for Week 3 which would include a document analysis python script that would potentially fall under the "Software/Code 3.0" characterization.
 
-The premise behind the script is to prompt the user for a directory local to their machine. If the directory is not found, then it will be created. If the directory is found, the script will then can said directory for files that qualify for GPT-mini analysis(.pdf, .docx, etc).
+The premise behind the script is to prompt the user for a directory local to their machine. If the directory is not found, then it will be created. If the directory is found, the script will then scan said directory for files that qualify for GPT-mini analysis(.pdf, .docx, etc).
 
-The relevant files in said directory are sent to the console and the user can then select and specify which file should be analyuzed.
+The directory listing of eligible files in the directory are sent to the console and the user can then select and specify which file should be analyuzed.
 
-Upon successful selection, the script then scans the file in order to understand the amount of tokens that are contained in that file. This is done to provide a token/stream in and token/stream out estimate, so that a cost projection for the analysis can be provided to the console.
+Upon successful selection, the script then scans the file in order to understand the number of tokens that are contained in that file. This is done to provide a token/stream in and token/stream out estimate, so that a cost projection for the analysis can be provided to the console.
 
 Upon running, we currently have the script dissecting or "chunking" the file into small segment sizes. This was initially done as we were running into rate limit issues on the free tier of gpt-4o-mini.
 
-We found that by chunking and lmiiting the token sizes of those chunks, we could effectively complete the job, however, due to the limitations of the free-tier, input was throttled and runs of documentation analysis like the Constitution of the United States as an example, were taking more than an hour. We finally upgraded to the pay as you go model, just to quantify the performance and the performance drastically improved(of course). Considering the amount of tokens being ingressed and egressed thru the API - I don't think I have even approached close to 10 cents in total cost for the multiple runs, test, and failures that I had initiated and experienced.
+We found that by chunking and limiiting the token sizes of those chunks, we could effectively complete the job, however, due to the limitations of the GPT free-tier, input was throttled and runs of documentation analysis like the Constitution of the United States as an example, were taking more than an hour. We finally upgraded to the pay as you go model, just to quantify the performance and the performance drastically improved(of course). Considering the amount of tokens being ingressed and egressed thru the API - I don't think I have even approached close to 10 cents in total cost for the multiple runs, test, and failures that I had initiated and experienced.
 
-As the run is running, I felt it would be adventageous to include a percentage complete and time to completion estimate which dynamically updates as the file is being chunked and processed. Finally, one the file has completed it will output the analysis to the console and provide a document summary in the directory that is easily identifiable via a prefix that is added to every file name vi (e.g. AI_Analysis_constitution.pdf.doc)
+As the Python script is running, I felt it would be adventageous to include a percentage complete and time to completion estimate which dynamically updates as the file is being chunked and processed. Finally, once the file has completed the analysis process, it will output the analysis to the console and provide a document summary in the directory that is easily identifiable via a prefix that is added to every file name vi (e.g. AI_Analysis_constitution.pdf.doc)
 
 Things I would have like to have included are:
 
