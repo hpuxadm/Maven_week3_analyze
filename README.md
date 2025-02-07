@@ -25,3 +25,14 @@ Batch processing of multiple files that were dropped into the repository directo
 For reasons for which I don't understand, I had issues initiating API_KEY assignment from the .env or even assigning the key variables via the terminal.  For whatever reason I could not get this functionality
 to work and had to go with the static assignment in the script, in order to examine and test functionality.
 
+Necessary Modules:
+
+openai # API functionality
+pdfplumber # PDF parser
+time # Time estimator for file transfer
+os # File and I/O functions
+math # Percentage completion function
+sys
+from docx import Document  # Ensure correct usage of python-docx
+import tiktoken  # Added for accurate token estimation
+
